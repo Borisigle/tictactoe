@@ -20,15 +20,17 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2px;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   margin: auto;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
 }
 
 .box {
-  border: solid 2px white;
-  width: 160px;
-  height: 160px;
+  border: solid 1px #7a18ec;
+  width: 130px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +47,6 @@ html {
 }
 
 .button {
-  margin-top: 1rem;
   background-color: transparent;
   position: relative;
   width: 180px;
@@ -61,7 +62,7 @@ html {
   border: 1px solid var(--color-red);
   &:hover {
     border: 1px solid transparent;
-    background: var(--color-red) url(https://i.postimg.cc/wBXGXbWN/pixel.png); // 360px x 1080px
+    background: var(--color-red) url(https://i.postimg.cc/wBXGXbWN/pixel.png);
     transition-delay: 0.8s;
     background-size: 180px;
     animation: animate var(--speed-fast) steps(8) forwards;

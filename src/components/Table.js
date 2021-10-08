@@ -18,7 +18,7 @@ const Table = () => {
 
   useEffect(() => {
     const win = [null, "X", null, null, "X", "O", null, "X", "O"];
-    win === arr ? console.log("win") : console.log(arr);
+    win === arr ? console.log("win") : console.log("");
   }, [arr]);
 
   return (
