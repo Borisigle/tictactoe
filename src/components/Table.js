@@ -18,17 +18,22 @@ const Table = () => {
 
   useEffect(() => {
     const win = [null, "X", null, null, "X", "O", null, "X", "O"];
-    win === arr ? console.log(win) : console.log(arr);
+    win === arr ? console.log("win") : console.log(arr);
   }, [arr]);
 
   return (
-    <div class="wrapper">
-      {arr.map((box, index) => (
-        <div className="box" onClick={() => handleClick(index)}>
-          <h1 className={box === "X" ? "x" : "o"}>{box}</h1>
-        </div>
-      ))}
-    </div>
+    <>
+      <div class="wrapper">
+        {arr.map((box, index) => (
+          <div className="box" onClick={() => handleClick(index)}>
+            <h1 className={box === "X" ? "x" : "o"}>{box}</h1>
+          </div>
+        ))}
+      </div>
+      <button className="button" onClick={() => setArr(Array(9).fill(null))}>
+        RESET
+      </button>
+    </>
   );
 };
 
