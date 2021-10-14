@@ -16,10 +16,22 @@ const Table = () => {
     return arr.filter(Boolean).length % 2 === 0 ? "X" : "O";
   };
 
-  useEffect(() => {
-    const win = [null, "X", null, null, "X", "O", null, "X", "O"];
-    win === arr ? console.log("win") : console.log("");
-  }, [arr]);
+  const win = [
+    [0, 1, 2],
+    [0, 4, 8],
+  ];
+  const positionX = arr.map((position, index) => position === "X" && index);
+  const positionO = arr.map((position, index) => position === "O" && index);
+  //console.log(positionX);
+  //const arr2 = [0, 1, 2];
+  //const winner = win.every(
+  //  (winpos) => arr2.includes(winpos) && console.log("hola")
+  //);
+  //console.log(winner);
+
+  for (const pos of win) {
+    positionX.includes(pos) && console.log("hola");
+  }
 
   return (
     <>
