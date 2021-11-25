@@ -27,6 +27,17 @@ html {
   margin-bottom: 2rem;
 }
 
+.wrapper2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
 .box {
   border: solid 1px #7a18ec;
   width: 130px;

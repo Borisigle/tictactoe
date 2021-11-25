@@ -48,7 +48,7 @@ const Table = () => {
   return (
     <>
       <h1 className="winner">{winner ? `Gano ${winner}` : ""}</h1>
-      <div class="wrapper">
+      <div className={!winner ? "wrapper" : "wrapper2"}>
         {arr.map((box, index) => (
           <div className="box" onClick={() => handleClick(index)}>
             <h1 className={box === "X" ? "x" : "o"}>{box}</h1>
