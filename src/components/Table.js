@@ -2,6 +2,22 @@ import React, { useState, useEffect } from "react";
 
 const Table = () => {
   const [arr, setArr] = useState(Array(9).fill(null));
+  const [winner, setWinner] = useState(false);
+
+  useEffect(() => {
+    const winnerTiktaktoe = () => {
+      let winnerPlayer;
+      win.forEach((win) => {
+        if (win.every((position) => positionX.includes(position))) {
+          winnerPlayer = "X";
+        } else if (win.every((position) => positionO.includes(position))) {
+          winnerPlayer = "O";
+        }
+      });
+      setWinner(winnerPlayer);
+    };
+    winnerTiktaktoe();
+  }, [arr]);
 
   const handleClick = (id) => {
     const nextPlayer = getNextPlayer();
@@ -19,22 +35,19 @@ const Table = () => {
   const win = [
     [0, 1, 2],
     [0, 4, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 4, 6],
+    [2, 5, 8],
+    [3, 4, 5],
+    [6, 7, 8],
   ];
   const positionX = arr.map((position, index) => position === "X" && index);
   const positionO = arr.map((position, index) => position === "O" && index);
-  //console.log(positionX);
-  //const arr2 = [0, 1, 2];
-  //const winner = win.every(
-  //  (winpos) => arr2.includes(winpos) && console.log("hola")
-  //);
-  //console.log(winner);
-
-  for (const pos of win) {
-    positionX.includes(pos) && console.log("hola");
-  }
 
   return (
     <>
+      <h1 className="winner">{winner ? `Gano ${winner}` : ""}</h1>
       <div class="wrapper">
         {arr.map((box, index) => (
           <div className="box" onClick={() => handleClick(index)}>
