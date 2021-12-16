@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Table = () => {
   const [arr, setArr] = useState(Array(9).fill(null));
-  const [winner, setWinner] = useState(false);
+  const [winner, setWinner] = useState();
 
   useEffect(() => {
     const winnerTiktaktoe = () => {
