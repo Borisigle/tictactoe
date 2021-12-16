@@ -17,7 +17,7 @@ const Table = () => {
       setWinner(winnerPlayer);
     };
     winnerTiktaktoe();
-  }, [arr]);
+  });
 
   const handleClick = (id) => {
     const nextPlayer = getNextPlayer();
